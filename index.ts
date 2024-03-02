@@ -61,13 +61,29 @@ async function createInfoWindow(event) {
 
   // Update the infowindow.
   const place = await feature.fetchPlace();
-  let content = place.displayName;
+  let content = '<b>' + place.displayName + '</b>';
 
   if(place.displayName == "Canada") {
     content +=
-    '<br/> Routine vaccines: (Chickenpox (Varicella), Diphtheria-Tetanus-Pertussis, Flu (influenza), Measles-Mumps-Rubella (MMR), Polio, Shingles' +
-    '<br>Routine Vaccines:  ' +
-    '</span>';
+    '<br><br>Routine Vaccines:' +
+    '<ul>' +
+        '<li>Chickenpox (Varicella)</li>' +
+        '<li>Diphtheria-Tetanus-Pertussis</li>' +
+        '<li>Flu (Influenza)</li>' +
+        '<li>Measles-Mumps-Rubella (MMR)</li>' +
+        '<li>Polio</li>' +
+        '<li>Shingles</li>' +
+    '</ul>' +
+
+    '<p>Recommended Vaccines:</p>' +
+    '<ul>' +
+        '<li>COVID-19</li>' +
+        '<li>Hepatitis A</li>' +
+        '<li>Hepatitis B</li>' +
+        '<li>Measles</li>' +
+        '<li>Rabies</li>' +
+    '</ul>' +
+'</span>';
   }
   else {
     content += "N/A"
