@@ -63,7 +63,7 @@ async function createInfoWindow(event) {
   const place = await feature.fetchPlace();
   let content = '<b>' + place.displayName + '</b>';
 
-  if(place.displayName == "Canada") {
+  if(place.displayName == "Canada" || place.displayName == "Mexico") {
     content +=
     '<br><br>Routine Vaccines:' +
     '<ul>' +
