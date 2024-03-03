@@ -1,4 +1,4 @@
-//import { createInfoWindow } from './info';
+
 let map: google.maps.Map;
 let featureLayer;
 let infoWindow;
@@ -23,7 +23,7 @@ async function initMap() {
 
   map = new Map(document.getElementById('map') as HTMLElement, {
     center: {lat: 39.23, lng: -105.73},
-    zoom: 5,
+    zoom: 3,
     // In the cloud console, configure your Map ID with a style that enables the
     // 'Administrative Area Level 2' Data Driven Styling type.
     mapId: 'c58fbe5558f591c8', // Substitute your own map ID.
@@ -93,7 +93,7 @@ export async function createInfoWindow(event) {
     '</ul>' +
 '</span>';
   }
-  else if(place.displayName == "Brazil" || place.displayName == "Venezuela" || place.displayName == "Colombia" || place.displayName == "Ecuador" ||  place.displayName == "Peru" ||  place.displayName == "Bolivia" ||  place.displayName == "") {
+  else if(place.displayName == "Brazil" || place.displayName == "Venezuela" || place.displayName == "Mauritania" || place.displayName == "Panama" || place.displayName == "Colombia" ||place.displayName == "Aruba" || place.displayName == "Ecuador" ||  place.displayName == "Peru" ||  place.displayName == "Bolivia" ||  place.displayName == "Guatemala" || place.displayName == "Honduras" || place.displayName == "Costa Rica" || place.displayName == "Nicaragua") {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
@@ -154,7 +154,7 @@ export async function createInfoWindow(event) {
     '</ul>' +
 '</span>';
   }
-  else if(place.displayName == "Cuba" || place.displayName == "Puerto Rico" || place.displayName == "Chile" || place.displayName == "Uruguay" || place.displayName == "Uzbekistan" || place.displayName == "Turkmenistan") {
+  else if(place.displayName == "Cuba" || place.displayName == "Puerto Rico" ||place.displayName == "Cayman Islands" ||place.displayName == "Jamaica" ||place.displayName == "Turks and Caicos Islands" ||place.displayName == "The Bahamas"||place.displayName == "Belize" || place.displayName == "Chile" || place.displayName == "Uruguay" || place.displayName == "Uzbekistan" ||place.displayName == "Kyrgyzstan" ||place.displayName == "Tajikistan" || place.displayName == "Turkmenistan") {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
@@ -192,7 +192,7 @@ export async function createInfoWindow(event) {
     '</ul>' +
 '</span>';
   }
-  else if(place.displayName == "Argentina" || place.displayName == "Paraguay" || place.displayName == "Chile" || place.displayName == "Singapore"|| place.displayName == "Iran" || place.displayName == "Oman" || place.displayName == "United Arab Emirates" || place.displayName == "Columbia") {
+  else if(place.displayName == "Argentina" || place.displayName == "French Polynesia"|| place.displayName == "Soloman Islands"  ||place.displayName == "Cook Islands" ||place.displayName == "Tonga" ||place.displayName == "Fiji" || place.displayName == "Samoa" || place.displayName == "Paraguay" || place.displayName == "Chile" || place.displayName == "Singapore"|| place.displayName == "Iran" || place.displayName == "Oman" || place.displayName == "United Arab Emirates" ||place.displayName == "Qatar" || place.displayName == "Columbia") {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
@@ -206,7 +206,7 @@ export async function createInfoWindow(event) {
     '</ul>' +
 '</span>';
   }
-  else if(place.displayName == "India"  || place.displayName == "Bangladesh"|| place.displayName == "Thailand" ||place.displayName == "Philippines"||place.displayName == "Malaysia" ||place.displayName == "Nepal"  ) {
+  else if(place.displayName == "India"  || place.displayName == "Bhutan" ||place.displayName == "Myanmar (Burma)" || place.displayName == "Cambodia" ||place.displayName == "North Korea" ||place.displayName == "Bangladesh"|| place.displayName == "Thailand" ||place.displayName == "Philippines"||place.displayName == "Malaysia" ||place.displayName == "Nepal"  ) {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
@@ -228,7 +228,7 @@ else if(place.displayName == "Pakistan" || place.displayName == "Indonesia") {
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
         '<li>COVID-19</li>' +
-  '<li>Cholera</li>' +
+        '<li>Cholera</li>' +
         '<li>Hepatitis A</li>' +
         '<li>Hepatitis B</li>' +
         '<li>Japanese Encephalitis</li>' +
@@ -259,7 +259,7 @@ else if(place.displayName == "South Korea") {
     '</ul>' +
 '</span>';
   }
-else if(place.displayName == "Russia" ) {
+else if(place.displayName == "Russia" || place.displayName == "Taiwan" ) {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
@@ -273,7 +273,7 @@ else if(place.displayName == "Russia" ) {
     '</ul>' +
 '</span>';
   }
-else if(place.displayName == "Sri Lanka" || place.displayName == "Japan" ) {
+else if(place.displayName == "Sri Lanka" || place.displayName == "Japan" || place.displayName == "Papua New Guinea" || place.displayName == "New Caledonia") {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
@@ -334,7 +334,7 @@ else if(place.displayName == "Vietnam" || place.displayName == "Laos" ) {
     '</ul>' +
 '</span>';
   }
-  else if(place.displayName == "Yemen" || place.displayName == "" ) {
+  else if(place.displayName == "Yemen" || place.displayName == "Lebanon" || place.displayName == "Belarus" || place.displayName == "Kuwait" ) {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
@@ -347,6 +347,18 @@ else if(place.displayName == "Vietnam" || place.displayName == "Laos" ) {
         '<li>Rabies</li>' +
          '<li>Typhoid</li>' +
          '<li>Cholera</li>' +
+    '</ul>' +
+'</span>';
+  }
+  else if(place.displayName == "Georgia" || place.displayName == "Armenia" || place.displayName == "Azerbaijan" ) {
+    content +=
+    '<p>Recommended Vaccines:</p>' +
+    '<ul>' +
+        '<li>COVID-19</li>' +
+        '<li>Hepatitis A</li>' +
+        '<li>Hepatitis B</li>' +
+        '<li>Measles</li>' +
+        '<li>Rabies</li>' +
     '</ul>' +
 '</span>';
   }
@@ -364,12 +376,12 @@ else if(place.displayName == "Vietnam" || place.displayName == "Laos" ) {
     '</ul>' +
 '</span>';
   }
-  else if(place.displayName == "Algeria" ) {
+  else if(place.displayName == "Algeria" || place.displayName == "Botswana" || place.displayName == "South Africa"|| place.displayName == "Lesotho" ||place.displayName == "Zimbabwe" ) {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
         '<li>COVID-19</li>' +
-  '<li>Cholera</li>' +
+        '<li>Cholera</li>' +
         '<li>Hepatitis A</li>' +
         '<li>Hepatitis B</li>' +
         '<li>Measles</li>' +
@@ -382,7 +394,7 @@ else if(place.displayName == "Vietnam" || place.displayName == "Laos" ) {
     '</ul>' +
 '</span>';
   }
-else if(place.displayName == "Egypt" ) {
+else if(place.displayName == "Egypt" || place.displayName == "Israel" ) {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
@@ -438,12 +450,12 @@ else if(place.displayName == "Gabon" ||place.displayName == "Rwanda"||place.disp
     '</ul>' +
 '</span>';
   }
-else if(place.displayName == "Ethiopia" ) {
+else if(place.displayName == "Ethiopia" ||place.displayName == "Malawi" ||place.displayName == "Comoros" || place.displayName == "Mayotte" ||place.displayName == "Burundi" ||place.displayName == "Eswatini" || place.displayName == "Eritrea" ) {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
         '<li>COVID-19</li>' +
-  '<li>Cholera</li>' +
+        '<li>Cholera</li>' +
         '<li>Hepatitis A</li>' +
         '<li>Hepatitis B</li>' +
         '<li>Malaria</li>' +
@@ -456,46 +468,9 @@ else if(place.displayName == "Ethiopia" ) {
     '</ul>' +
 '</span>';
   }
-else if(place.displayName == "Côte d'Ivoire (Ivory Coast)" ||place.displayName == "Uganda") {
-    content +=
-    '<p>Recommended Vaccines:</p>' +
-    '<ul>' +
-        '<li>COVID-19</li>' +
-  '<li>Cholera</li>' +
-        '<li>Hepatitis A</li>' +
-        '<li>Hepatitis B</li>' +
-        '<li>Malaria</li>' +
-        '<li>Measles</li>' +
-        '<li>Meningitis (Meningococcal disease)</li>' +
-        '<li>Rabies</li>' +
-        '<li>Typhoid</li>' +
-        '<li>Yellow Fever</li>' +
 
 
-    '</ul>' +
-'</span>';
-  }
-else if(place.displayName == "South Africa"|| place.displayName == "Zimbabwe" ) {
-    content +=
-    '<p>Recommended Vaccines:</p>' +
-    '<ul>' +
-        '<li>COVID-19</li>' +
-  '<li>Cholera</li>' +
-        '<li>Hepatitis A</li>' +
-        '<li>Hepatitis B</li>' +
-        '<li>Malaria</li>' +
-        '<li>Measles</li>' +
-        '<li>Rabies</li>' +
-        '<li>Typhoid</li>' +
-        '<li>Yellow Fever</li>' +
-
-
-    '</ul>' +
-'</span>';
-  }
-
-
-else if(place.displayName == "Mali" || place.displayName == "Niger"||place.displayName == "Senegal" ||place.displayName == "Somalia" ) {
+else if(place.displayName == "Mali" || place.displayName == "Niger" || place.displayName == "The Gambia" || place.displayName == "Guinea-Bissau" || place.displayName == "Côte d'Ivoire" || place.displayName == "Burkina Faso" ||place.displayName == "Senegal" ||place.displayName == "Somalia" || place.displayName == "Liberia" || place.displayName == "Guinea" ) {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
@@ -516,12 +491,12 @@ else if(place.displayName == "Mali" || place.displayName == "Niger"||place.displ
   }
 
 
-else if(place.displayName == "Ghana" ||place.displayName == "Kenya" ||place.displayName == "Sudan"  ) {
+else if(place.displayName == "Ghana" || place.displayName == "Republic of the Congo"  ||place.displayName == "Democratic Republic of the Congo" || place.displayName == "Kenya" || place.displayName == "South Sudan" || place.displayName == "Central African Republic" ||place.displayName == "Sudan" || place.displayName == "Chad" || place.displayName == "Cameroon") {
     content +=
     '<p>Recommended Vaccines:</p>' +
     '<ul>' +
         '<li>COVID-19</li>' +
-  '<li>Cholera</li>' +
+        '<li>Cholera</li>' +
         '<li>Hepatitis A</li>' +
         '<li>Hepatitis B</li>' +
         '<li>Malaria</li>' +
@@ -560,16 +535,82 @@ else if(place.displayName == "Toga" ) {
         '<li>Hepatitis B</li>' +
         '<li>Measles</li>' +
         '<li>Typhoid</li>' +
-
-
+    '</ul>' +
+'</span>';
+  }
+  else if(place.displayName == "Norway"|| place.displayName == "North Macedonia"|| place.displayName == "Belarus" || place.displayName == "Moldova" || place.displayName == "Sweden"||place.displayName == "Denamrk"||place.displayName == "Lithuania" ||place.displayName == "Montenegro" ||place.displayName == "Latvia"||place.displayName == "Albania"||place.displayName == "Serbia"||place.displayName == "Bulgaria"||place.displayName == "Finland"||place.displayName == "Romania"||place.displayName == "Poland" ||place.displayName == "Ukraine" ) {
+    content +=
+    '<p>Recommended Vaccines:</p>' +
+    '<ul>' +
+        '<li>COVID-19</li>' +
+        '<li>Hepatitis A</li>' +
+        '<li>Hepatitis B</li>' +
+        '<li>Measles</li>' +
+        '<li>Rabies</li>' +
+	   '<li>Tick-borne Encephalitis</li>' +
+    '</ul>' +
+'</span>';
+  }
+else if(place.displayName == "Iceland" ||place.displayName == "Greece") {
+    content +=
+    '<p>Recommended Vaccines:</p>' +
+    '<ul>' +
+        '<li>COVID-19</li>' +
+        '<li>Hepatitis A</li>' +
+        '<li>Hepatitis B</li>' +
+        '<li>Measles</li>' +
+        '<li>Rabies</li>' +
+    '</ul>' +
+'</span>';
+  }
+else if(place.displayName == "Türkiye" ) {
+    content +=
+    '<p>Recommended Vaccines:</p>' +
+    '<ul>' +
+        '<li>COVID-19</li>' +
+        '<li>Hepatitis A</li>' +
+        '<li>Hepatitis B</li>' +
+        '<li>Measles</li>' +
+        '<li>Rabies</li>' +
+        '<li>Typhoid</li>' +
+    '</ul>' +
+'</span>';
+  }
+else if(place.displayName == "Australia" ) {
+    content +=
+    '<p>Recommended Vaccines:</p>' +
+    '<ul>' +
+        '<li>COVID-19</li>' +
+        '<li>Hepatitis B</li>' +
+        '<li>Japanese Encephalitis</li>' +
+        '<li>Measles</li>' +
+        '<li>Rabies</li>' +
+        '<li>Yellow Fever</li>' +
+    '</ul>' +
+'</span>';
+  }
+else if(place.displayName == "Afghanistan" || place.displayName == "Namibia" ||place.displayName == "Angola" ||place.displayName == "Uganda" ) {
+    content +=
+    '<p>Recommended Vaccines:</p>' +
+    '<ul>' +
+        '<li>COVID-19</li>' +
+        '<li>Cholera</li>' +
+        '<li>Hepatitis A</li>' +
+        '<li>Hepatitis B</li>' +
+        '<li>Malaria</li>' +
+        '<li>Measles</li>' +
+        '<li>Rabies</li>' +
+        '<li>Polio</li>' +
+        '<li>Typhoid</li>' +
     '</ul>' +
 '</span>';
   }
 
 
 
+
   else {
-    content += "N/A"
+    content += "Reccomended Vaccines:<br>N/A"
   }
 
   updateInfoWindow(content, event.latLng);
@@ -581,7 +622,7 @@ else if(place.displayName == "Toga" ) {
 // Define styles.
 // Stroke and fill with minimum opacity value.
 const styleDefault = {
-  strokeColor: '#8b0000',
+  strokeColor: '#43466c',
   strokeOpacity: 1.0,
   strokeWeight: 1.0,
   fillColor: 'white',
@@ -590,13 +631,13 @@ const styleDefault = {
 // Style for the clicked polygon.
 const styleClicked = {
   ...styleDefault,
-  fillColor: '#8b0000',
+  fillColor: '#43466c',
   fillOpacity: 0.5,
 };
 // Style for polygon on mouse move.
 const styleMouseMove = {
   ...styleDefault,
-  strokeWeight: 4.0,
+  strokeWeight: 0.5,
 };
 
 // Apply styles using a feature style function.
