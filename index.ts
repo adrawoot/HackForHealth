@@ -1,4 +1,3 @@
-
 let map: google.maps.Map;
 let featureLayer;
 let infoWindow;
@@ -64,6 +63,66 @@ function updateInfoWindow(content, center) {
     shouldFocus: false,
   });
 }
+
+// Define styles.
+// Stroke and fill with minimum opacity value.
+const styleDefault = {
+  strokeColor: '#43466c',
+  strokeOpacity: 1.0,
+  strokeWeight: 1.0,
+  fillColor: 'white',
+  fillOpacity: 0.1,  // Polygons must be visible to receive events.
+};
+// Style for the clicked polygon.
+const styleClicked = {
+  ...styleDefault,
+  fillColor: '#43466c',
+  fillOpacity: 0.5,
+};
+// Style for polygon on mouse move.
+const styleMouseMove = {
+  ...styleDefault,
+  strokeWeight: 0.5,
+};
+
+// Apply styles using a feature style function.
+function applyStyle(/* FeatureStyleFunctionOptions */ params) {
+  const placeId = params.feature.placeId;
+  //@ts-ignore
+  if (lastClickedFeatureIds.includes(placeId)) {
+    return styleClicked;
+  }
+  //@ts-ignore
+  if (lastInteractedFeatureIds.includes(placeId)) {
+    return styleMouseMove;
+  }
+  return styleDefault;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Helper function for the infowindow.
 export async function createInfoWindow(event) {
@@ -605,10 +664,6 @@ else if(place.displayName == "Afghanistan" || place.displayName == "Namibia" ||p
     '</ul>' +
 '</span>';
   }
-
-
-
-
   else {
     content += "Reccomended Vaccines:<br>N/A"
   }
@@ -616,44 +671,6 @@ else if(place.displayName == "Afghanistan" || place.displayName == "Namibia" ||p
   updateInfoWindow(content, event.latLng);
 
 }
-
-
-
-// Define styles.
-// Stroke and fill with minimum opacity value.
-const styleDefault = {
-  strokeColor: '#43466c',
-  strokeOpacity: 1.0,
-  strokeWeight: 1.0,
-  fillColor: 'white',
-  fillOpacity: 0.1,  // Polygons must be visible to receive events.
-};
-// Style for the clicked polygon.
-const styleClicked = {
-  ...styleDefault,
-  fillColor: '#43466c',
-  fillOpacity: 0.5,
-};
-// Style for polygon on mouse move.
-const styleMouseMove = {
-  ...styleDefault,
-  strokeWeight: 0.5,
-};
-
-// Apply styles using a feature style function.
-function applyStyle(/* FeatureStyleFunctionOptions */ params) {
-  const placeId = params.feature.placeId;
-  //@ts-ignore
-  if (lastClickedFeatureIds.includes(placeId)) {
-    return styleClicked;
-  }
-  //@ts-ignore
-  if (lastInteractedFeatureIds.includes(placeId)) {
-    return styleMouseMove;
-  }
-  return styleDefault;
-}
-
 
 
 initMap();
