@@ -1,35 +1,27 @@
 {
-  "name": "map-simple",
-  "description": "Samples for Google Maps JavaScript",
-  "version": "2.1.4",
-  "keywords": [
-    "google",
-    "javascript",
-    "maps",
-    "samples"
-  ],
-  "homepage": "https://github.com/googlemaps/js-samples#readme",
-  "bugs": {
-    "url": "https://github.com/googlemaps/js-samples/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/googlemaps/js-samples.git"
-  },
-  "files": [],
-  "license": "Apache-2.0",
+  "main": "src/main.js",
   "scripts": {
-    "dev": "vite",
-    "start": "vite",
-    "build": "vite build --outDir dist --base './'",
-    "test": "tsc --no-emit",
-    "preview": "vite preview"
+    "start": "webpack-dev-server --port 4000",
+    "lint": "eslint src/*.js"
   },
   "devDependencies": {
-    "@types/google.maps": "^3.53.5",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.12"
+    "@babel/core": "7.7.2",
+    "@babel/preset-env": "7.7.1",
+    "babel-loader": "8.0.6",
+    "clean-webpack-plugin": "3.0.0",
+    "css-loader": "^3.2.0",
+    "dotenv-webpack": "^1.7.0",
+    "eslint": "^6.6.0",
+    "eslint-loader": "^3.0.2",
+    "html-webpack-plugin": "3.2.0",
+    "style-loader": "^1.0.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "4.41.2",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.9.0"
   },
-  "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "load-google-maps-api": "^2.0.1",
+    "prune": "0.0.2"
+  }
 }
